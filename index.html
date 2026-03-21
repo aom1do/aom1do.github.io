@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>aom1do</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+<style>
+
+/* ===== 背景 ===== */
+
+#mapBackground{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+#mapBackground svg{
+width:100%;
+height:100%;
+}
+
+/* ===== 全体 ===== */
+
+body{
+margin:0;
+font-family:sans-serif;
+font-size:18px;
+line-height:1.8;
+background:#f4fbfb;
+color:#333;
+}
+
+/* ===== ヘッダー ===== */
+
+header{
+background:#008b8b;
+color:white;
+padding:25px 0;
+position:sticky;
+top:0;
+z-index:10;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+header h1{
+text-align:center;
+font-size:38px;
+margin:0;
+}
+
+nav{
+display:flex;
+justify-content:space-evenly;
+margin-top:15px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+font-weight:bold;
+transition:0.2s;
+}
+
+nav a:hover{
+transform:scale(1.1);
+}
+
+/* ===== メイン ===== */
+
+main{
+max-width:900px;
+margin:auto;
+padding:50px 20px;
+}
+
+/* ===== セクション ===== */
+
+section{
+background:white;
+padding:25px 30px;
+margin-bottom:35px;
+border-radius:12px;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
+
+opacity:0;
+transform:translateY(20px);
+transition:0.6s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+h2{
+font-size:26px;
+border-bottom:3px solid #20b2aa;
+}
+
+/* ===== リスト ===== */
+
+ul{
+padding-left:20px;
+font-size:19px;
+}
+
+/* ===== ツールチップ ===== */
+
+.tooltip{
+position:relative;
+cursor:pointer;
+}
+
+.tooltip::after{
+content:attr(data-name);
+position:absolute;
+bottom:130%;
+left:50%;
+transform:translateX(-50%);
+background:#333;
+color:white;
+padding:5px 10px;
+border-radius:6px;
+font-size:14px;
+white-space:nowrap;
+opacity:0;
+pointer-events:none;
+transition:0.2s;
+}
+
+.tooltip:hover::after{
+opacity:1;
+}
+
+/* ===== スキル ===== */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+font-size:50px;
+margin-top:20px;
+}
+
+.skills i{
+transition:0.25s;
+}
+
+.skills i:hover{
+transform:scale(1.3) rotate(5deg);
+}
+
+/* ===== SNS ===== */
+
+.social-links{
+display:flex;
+justify-content:space-evenly;
+margin-top:20px;
+font-size:44px;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.social-links a{
+color:#008b8b;
+transition:0.25s;
+}
+
+.social-links a:hover{
+transform:scale(1.3);
+}
+
+/* ===== フッター ===== */
+
+footer{
+text-align:center;
+padding:25px;
+background:#008b8b;
+color:white;
+line-height:1.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="mapBackground"></div>
+
+<header>
+
+<h1>aom1do</h1>
+
+<nav>
+<a href="#affiliation">所属</a>
+<a href="#qualification">資格</a>
+<a href="#interest">興味</a>
+<a href="#skills">スキル</a>
+<a href="#hobby">趣味</a>
+<a href="#links">リンク</a>
+</nav>
+
+</header>
+
+<main>
+
+<section id="affiliation">
+<h2>所属</h2>
+<p>埼玉大学 工学部 情報工学科 4年</p>
+</section>
+
+<section id="qualification">
+<h2>資格</h2>
+<ul>
+<li>基本情報技術者試験</li>
+<li>応用情報技術者試験</li>
+<li>G検定</li>
+<li>TOEIC 885点</li>
+</ul>
+</section>
+
+<section id="interest">
+<h2>興味</h2>
+<ul>
+<li>組み込み制御・IoT</li>
+<li>グラフ理論とネットワーク応用</li>
+<li>機械学習・LNNによる映像処理</li>
+</ul>
+</section>
+
+<section id="skills">
+
+<h2>スキル</h2>
+
+<div class="skills">
+
+<i class="devicon-cplusplus-plain colored tooltip" data-name="C++"></i>
+
+<i class="devicon-python-plain colored tooltip" data-name="Python"></i>
+
+<i class="devicon-java-plain colored tooltip" data-name="Java"></i>
+
+<i class="devicon-rust-plain colored tooltip" data-name="Rust"></i>
+
+<i class="devicon-matlab-plain colored tooltip" data-name="MATLAB"></i>
+
+<i class="devicon-html5-plain colored tooltip" data-name="HTML"></i>
+
+<i class="devicon-css3-plain colored tooltip" data-name="CSS"></i>
+
+<i class="devicon-javascript-plain colored tooltip" data-name="JavaScript"></i>
+
+<i class="devicon-kotlin-plain colored tooltip" data-name="Kotlin"></i>
+
+<i class="devicon-linux-plain colored tooltip" data-name="Linux"></i>
+
+<i class="devicon-docker-plain colored tooltip" data-name="Docker"></i>
+
+<i class="devicon-postgresql-plain colored tooltip" data-name="SQL"></i>
+
+<i class="devicon-github-original tooltip" data-name="GitHub"></i>
+
+<i class="devicon-latex-original tooltip" data-name="LaTeX"></i>
+
+</div>
+
+</section>
+
+<section id="hobby">
+
+<h2>趣味</h2>
+
+<ul>
+
+<li>喫茶店巡り</li>
+
+<li>
+<a href="https://www.youtube.com/playlist?list=PLG0Awaxx5E3zPgdd07VueiyK0hY6Y-6Ab"
+target="_blank"
+rel="noopener">
+ボカロ
+</a>
+(ライブ、グッズ収集など)
+</li>
+
+</ul>
+
+</section>
+
+<section id="links">
+
+<h2>リンク</h2>
+
+<div class="social-links">
+
+<a href="https://x.com/aom1do"
+target="_blank"
+rel="noopener"
+class="tooltip"
+data-name="X">
+<i class="fa-brands fa-x-twitter"></i>
+</a>
+
+<a href="https://github.com/aom1do"
+target="_blank"
+rel="noopener"
+class="tooltip"
+data-name="GitHub">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="https://qiita.com/aom1do"
+target="_blank"
+rel="noopener"
+class="tooltip"
+data-name="Qiita">
+<i class="fa-solid fa-code"></i>
+</a>
+
+<a href="https://note.com/aom1do"
+target="_blank"
+rel="noopener"
+class="tooltip"
+data-name="note">
+<i class="fa-solid fa-note-sticky"></i>
+</a>
+
+<a href="https://www.instagram.com/aom1do/"
+target="_blank"
+rel="noopener"
+class="tooltip"
+data-name="Instagram">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+© 2026 aom1do<br>
+All Rights Reserved.
+</footer>
+
+<script>
+
+/* 背景生成 */
+
+const colors=["#b2f0e6","#ffd6d6","#fff3b0","#d4ccff"];
+
+const svgNS="http://www.w3.org/2000/svg";
+const svg=document.createElementNS(svgNS,"svg");
+
+const width=window.innerWidth;
+const height=window.innerHeight;
+
+svg.setAttribute("viewBox",`0 0 ${width} ${height}`);
+
+for(let i=0;i<50;i++){
+
+const poly=document.createElementNS(svgNS,"polygon");
+
+let points="";
+
+const cx=Math.random()*width;
+const cy=Math.random()*height;
+
+const vertices=4+Math.floor(Math.random()*5);
+const radius=120+Math.random()*200;
+
+for(let j=0;j<vertices;j++){
+
+const angle=(j/vertices)*Math.PI*2;
+const r=radius*(0.5+Math.random()*0.9);
+
+const x=cx+Math.cos(angle)*r;
+const y=cy+Math.sin(angle)*r;
+
+points+=`${x},${y} `;
+}
+
+poly.setAttribute("points",points);
+poly.setAttribute("fill",colors[Math.floor(Math.random()*colors.length)]);
+poly.setAttribute("opacity","0.35");
+
+svg.appendChild(poly);
+
+}
+
+document.getElementById("mapBackground").appendChild(svg);
+
+/* スクロール表示 */
+
+const sections=document.querySelectorAll("section");
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+sections.forEach(sec=>observer.observe(sec));
+
+</script>
+
+</body>
+</html>
