@@ -46,7 +46,8 @@ color:#333;
 /* ===== ヘッダー ===== */
 
 header{
-background:#008b8b;
+background:rgba(0,139,139,0.7);
+backdrop-filter:blur(8px);
 color:white;
 padding:25px 0;
 position:sticky;
@@ -59,6 +60,8 @@ header h1{
 text-align:center;
 font-size:38px;
 margin:0;
+padding-bottom:12px;
+border-bottom:2px solid rgba(255,255,255,0.4);
 }
 
 nav{
@@ -69,15 +72,27 @@ flex-wrap:wrap;
 }
 
 nav a{
+
 color:white;
 text-decoration:none;
-font-size:18px;
+font-size:16px;
 font-weight:bold;
-transition:0.2s;
+
+padding:8px 18px;
+border-radius:20px;
+
+background:rgba(255,255,255,0.15);
+
+transition:0.25s;
+
 }
 
 nav a:hover{
-transform:scale(1.1);
+
+background:white;
+color:#008b8b;
+transform:scale(1.05);
+
 }
 
 /* ===== メイン ===== */
@@ -91,15 +106,18 @@ padding:50px 20px;
 /* ===== セクション ===== */
 
 section{
+
 background:white;
-padding:25px 30px;
+padding:30px 40px;
 margin-bottom:35px;
 border-radius:12px;
+
 box-shadow:0 8px 18px rgba(0,0,0,0.08);
 
 opacity:0;
 transform:translateY(20px);
 transition:0.6s;
+
 }
 
 section.show{
@@ -107,9 +125,13 @@ opacity:1;
 transform:translateY(0);
 }
 
+/* ===== セクションタイトル ===== */
+
 h2{
 font-size:26px;
 border-bottom:3px solid #20b2aa;
+padding-bottom:5px;
+margin-bottom:15px;
 }
 
 /* ===== リスト ===== */
@@ -147,6 +169,10 @@ transition:0.2s;
 opacity:1;
 }
 
+.tooltip.show::after{
+opacity:1;
+}
+
 /* ===== スキル ===== */
 
 .skills{
@@ -154,16 +180,31 @@ display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:20px;
-font-size:50px;
 margin-top:20px;
 }
 
-.skills i{
+.skill-card{
+
+width:90px;
+height:90px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:42px;
+
+background:white;
+border-radius:14px;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.12);
+
 transition:0.25s;
+
 }
 
-.skills i:hover{
-transform:scale(1.3) rotate(5deg);
+.skill-card:hover{
+transform:scale(1.15) rotate(5deg);
 }
 
 /* ===== SNS ===== */
@@ -191,7 +232,8 @@ transform:scale(1.3);
 footer{
 text-align:center;
 padding:25px;
-background:#008b8b;
+background:rgba(0,139,139,0.6);
+backdrop-filter:blur(8px);
 color:white;
 line-height:1.6;
 }
@@ -240,7 +282,7 @@ line-height:1.6;
 <ul>
 <li>組み込み制御・IoT</li>
 <li>グラフ理論とネットワーク応用</li>
-<li>機械学習・LNNによる映像処理</li>
+<li>機械学習・CNNによる映像処理</li>
 </ul>
 </section>
 
@@ -250,33 +292,61 @@ line-height:1.6;
 
 <div class="skills">
 
-<i class="devicon-cplusplus-plain colored tooltip" data-name="C++"></i>
+<div class="skill-card tooltip" data-name="C++">
+<i class="devicon-cplusplus-plain colored"></i>
+</div>
 
-<i class="devicon-python-plain colored tooltip" data-name="Python"></i>
+<div class="skill-card tooltip" data-name="Python">
+<i class="devicon-python-plain colored"></i>
+</div>
 
-<i class="devicon-java-plain colored tooltip" data-name="Java"></i>
+<div class="skill-card tooltip" data-name="Java">
+<i class="devicon-java-plain colored"></i>
+</div>
 
-<i class="devicon-rust-plain colored tooltip" data-name="Rust"></i>
+<div class="skill-card tooltip" data-name="Rust">
+<i class="devicon-rust-plain colored"></i>
+</div>
 
-<i class="devicon-matlab-plain colored tooltip" data-name="MATLAB"></i>
+<div class="skill-card tooltip" data-name="MATLAB">
+<i class="devicon-matlab-plain colored"></i>
+</div>
 
-<i class="devicon-html5-plain colored tooltip" data-name="HTML"></i>
+<div class="skill-card tooltip" data-name="HTML">
+<i class="devicon-html5-plain colored"></i>
+</div>
 
-<i class="devicon-css3-plain colored tooltip" data-name="CSS"></i>
+<div class="skill-card tooltip" data-name="CSS">
+<i class="devicon-css3-plain colored"></i>
+</div>
 
-<i class="devicon-javascript-plain colored tooltip" data-name="JavaScript"></i>
+<div class="skill-card tooltip" data-name="JavaScript">
+<i class="devicon-javascript-plain colored"></i>
+</div>
 
-<i class="devicon-kotlin-plain colored tooltip" data-name="Kotlin"></i>
+<div class="skill-card tooltip" data-name="Kotlin">
+<i class="devicon-kotlin-plain colored"></i>
+</div>
 
-<i class="devicon-linux-plain colored tooltip" data-name="Linux"></i>
+<div class="skill-card tooltip" data-name="Linux">
+<i class="devicon-linux-plain colored"></i>
+</div>
 
-<i class="devicon-docker-plain colored tooltip" data-name="Docker"></i>
+<div class="skill-card tooltip" data-name="Docker">
+<i class="devicon-docker-plain colored"></i>
+</div>
 
-<i class="devicon-postgresql-plain colored tooltip" data-name="SQL"></i>
+<div class="skill-card tooltip" data-name="SQL">
+<i class="devicon-mysql-plain colored"></i>
+</div>
 
-<i class="devicon-github-original tooltip" data-name="GitHub"></i>
+<div class="skill-card tooltip" data-name="GitHub">
+<i class="devicon-github-original"></i>
+</div>
 
-<i class="devicon-latex-original tooltip" data-name="LaTeX"></i>
+<div class="skill-card tooltip" data-name="LaTeX">
+<i class="devicon-latex-original"></i>
+</div>
 
 </div>
 
@@ -362,7 +432,12 @@ All Rights Reserved.
 
 <script>
 
-/* 背景生成 */
+/* ===== 背景生成 ===== */
+
+function generateBackground(){
+
+const container=document.getElementById("mapBackground");
+container.innerHTML="";
 
 const colors=["#b2f0e6","#ffd6d6","#fff3b0","#d4ccff"];
 
@@ -405,9 +480,15 @@ svg.appendChild(poly);
 
 }
 
-document.getElementById("mapBackground").appendChild(svg);
+container.appendChild(svg);
 
-/* スクロール表示 */
+}
+
+generateBackground();
+
+window.addEventListener("resize",generateBackground);
+
+/* ===== スクロール表示 ===== */
 
 const sections=document.querySelectorAll("section");
 
@@ -420,6 +501,28 @@ entry.target.classList.add("show");
 });
 
 sections.forEach(sec=>observer.observe(sec));
+
+/* ===== スマホツールチップ ===== */
+
+document.querySelectorAll(".tooltip").forEach(el=>{
+
+el.addEventListener("click",e=>{
+
+if(window.innerWidth<768){
+
+e.preventDefault();
+
+document.querySelectorAll(".tooltip").forEach(t=>{
+if(t!==el) t.classList.remove("show");
+});
+
+el.classList.toggle("show");
+
+}
+
+});
+
+});
 
 </script>
 
