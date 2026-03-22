@@ -60,7 +60,7 @@ header h1{
 text-align:center;
 font-size:38px;
 margin:0;
-padding-bottom:12px;
+padding-bottom:10px;
 border-bottom:2px solid rgba(255,255,255,0.4);
 }
 
@@ -214,7 +214,7 @@ display:flex;
 justify-content:space-evenly;
 margin-top:20px;
 font-size:44px;
-flex-wrap:wrap;
+flex-wrap:nowrap;
 gap:20px;
 }
 
@@ -236,6 +236,52 @@ background:rgba(0,139,139,0.6);
 backdrop-filter:blur(8px);
 color:white;
 line-height:1.6;
+}
+
+/* ===== スマホ対応 ===== */
+
+@media (max-width:768px){
+
+header{
+padding:15px 0;
+}
+
+header h1{
+font-size:28px;
+}
+
+nav{
+gap:5px;
+}
+
+nav a{
+font-size:12px;
+padding:5px 8px;
+}
+
+main{
+padding:30px 10px;
+}
+
+section{
+padding:20px;
+}
+
+.skills{
+gap:10px;
+}
+
+.skill-card{
+width:65px;
+height:65px;
+font-size:30px;
+}
+
+.social-links{
+font-size:32px;
+gap:12px;
+}
+
 }
 
 </style>
@@ -432,7 +478,7 @@ All Rights Reserved.
 
 <script>
 
-/* ===== 背景生成 ===== */
+/* 背景 */
 
 function generateBackground(){
 
@@ -488,7 +534,7 @@ generateBackground();
 
 window.addEventListener("resize",generateBackground);
 
-/* ===== スクロール表示 ===== */
+/* スクロール表示 */
 
 const sections=document.querySelectorAll("section");
 
@@ -502,7 +548,7 @@ entry.target.classList.add("show");
 
 sections.forEach(sec=>observer.observe(sec));
 
-/* ===== スマホツールチップ ===== */
+/* スマホ2回タップリンク */
 
 document.querySelectorAll(".tooltip").forEach(el=>{
 
@@ -510,13 +556,17 @@ el.addEventListener("click",e=>{
 
 if(window.innerWidth<768){
 
+if(!el.classList.contains("show")){
+
 e.preventDefault();
 
 document.querySelectorAll(".tooltip").forEach(t=>{
-if(t!==el) t.classList.remove("show");
+t.classList.remove("show");
 });
 
-el.classList.toggle("show");
+el.classList.add("show");
+
+}
 
 }
 
