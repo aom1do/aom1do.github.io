@@ -8,7 +8,7 @@
 
 <title>aom1do</title>
 
-<meta name="description" content="aom1doのプロフィール。">
+<meta name="description" content="aom1doのポートフォリオ。埼玉大学 情報工学科。組み込み制御・IoT・グラフ理論などに興味。">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -103,8 +103,6 @@ padding:50px 20px;
 }
 
 
-/* セクション */
-
 section{
 background:white;
 padding:30px 40px;
@@ -166,12 +164,7 @@ transition:0.2s;
 opacity:1;
 }
 
-.tooltip.show::after{
-opacity:1;
-}
-
-
-/* スキル */
+/* ===== スキル ===== */
 
 .skills{
 display:flex;
@@ -198,8 +191,7 @@ transition:0.25s;
 transform:scale(1.15) rotate(5deg);
 }
 
-
-/* 本棚 */
+/* ===== 本棚 ===== */
 
 .bookshelf-container{
 position:relative;
@@ -237,7 +229,6 @@ box-shadow:0 6px 14px rgba(0,0,0,0.25);
 transform:scale(1.08);
 }
 
-
 /* 矢印 */
 
 .book-btn{
@@ -267,8 +258,7 @@ right:-10px;
 background:#008b8b;
 }
 
-
-/* SNS */
+/* ===== SNS ===== */
 
 .social-links{
 display:flex;
@@ -300,10 +290,9 @@ color:white;
 line-height:1.6;
 }
 
+/* ===== スマホ ===== */
 
 /* スマホ用 */
-
-@media (max-width:768px){
 
 header h1{
 font-size:28px;
@@ -427,75 +416,75 @@ gap:12px;
 <div class="bookshelf" id="bookshelf">
 
 <div class="book tooltip" data-name="Graph Theory">
-<img src="book/graph.jpg">
+<img src="books/graph.jpg">
 </div>
 
 <div class="book tooltip" data-name="ITRON">
-<img src="book/itron.jpg">
+<img src="books/itron.jpg">
 </div>
 
 <div class="book tooltip" data-name="Rust">
-<img src="book/rust.jpg">
+<img src="books/rust.jpg">
 </div>
 
 <div class="book tooltip" data-name="Autoware">
-<img src="book/autoware.jpg">
+<img src="books/autoware.jpg">
 </div>
 
 <div class="book tooltip" data-name="Python">
-<img src="book/python.jpg">
+<img src="books/python.jpg">
 </div>
 
 <div class="book tooltip" data-name="Kotlin">
-<img src="book/kotlin.jpg">
+<img src="books/kotlin.jpg">
 </div>
 
 <div class="book tooltip" data-name="Java">
-<img src="book/java.jpg">
+<img src="books/java.jpg">
 </div>
 
 <div class="book tooltip" data-name="C">
-<img src="book/c.jpg">
+<img src="books/c.jpg">
 </div>
 
 <div class="book tooltip" data-name="G検定">
-<img src="book/g.jpg">
+<img src="books/g.jpg">
 </div>
 
 <div class="book tooltip" data-name="Algorithm">
-<img src="book/algorithm.jpg">
+<img src="books/algorithm.jpg">
 </div>
 
 <div class="book tooltip" data-name="LaTeX">
-<img src="book/latex.jpg">
+<img src="books/latex.jpg">
 </div>
 
 <div class="book tooltip" data-name="応用情報">
-<img src="book/ap.jpg">
+<img src="books/ap.jpg">
 </div>
 
 <div class="book tooltip" data-name="安全確保">
-<img src="book/sc.jpg">
+<img src="books/sc.jpg">
 </div>
 
 <div class="book tooltip" data-name="Web">
-<img src="book/web.jpg">
+<img src="books/web.jpg">
 </div>
 
 <div class="book tooltip" data-name="Linux">
-<img src="book/linuc.jpg">
+<img src="books/linux.jpg">
 </div>
 
 <div class="book tooltip" data-name="Girl">
-<img src="book/girl.jpg">
+<img src="books/girl.jpg">
 </div>
 
 <div class="book tooltip" data-name="しめじ">
-<img src="book/shimeji.jpg">
+<img src="books/shimeji.jpg">
 </div>
 
 <div class="book tooltip" data-name="まいごえん">
-<img src="book/maigoen.jpg">
+<img src="books/maigoen.jpg">
 </div>
 
 </div>
@@ -546,7 +535,7 @@ gap:12px;
 <i class="fa-solid fa-note-sticky"></i>
 </a>
 
-<a href="https://www.instagram.com/ao31do/" target="_blank" class="tooltip" data-name="Instagram">
+<a href="https://www.instagram.com/aom1do/" target="_blank" class="tooltip" data-name="Instagram">
 <i class="fa-brands fa-instagram"></i>
 </a>
 
@@ -634,44 +623,11 @@ document.querySelector(".book-btn.left")
 .addEventListener("click",()=>{
 shelf.scrollBy({left:-300,behavior:"smooth"});
 });
+});
 
 document.querySelector(".book-btn.right")
 .addEventListener("click",()=>{
 shelf.scrollBy({left:300,behavior:"smooth"});
-});
-
-
-/* スマホ用 */
-
-const tooltips=document.querySelectorAll(".tooltip");
-
-tooltips.forEach(el=>{
-el.addEventListener("click",function(e){
-
-if(window.innerWidth<=768){
-
-if(el.closest(".social-links")){
-if(!el.classList.contains("show")){
-e.preventDefault();
-document.querySelectorAll(".tooltip").forEach(t=>t.classList.remove("show"));
-el.classList.add("show");
-}else{
-el.classList.remove("show");
-}
-}else{
-document.querySelectorAll(".tooltip").forEach(t=>t.classList.remove("show"));
-el.classList.add("show");
-}
-
-}
-
-});
-});
-
-document.addEventListener("click",function(e){
-if(!e.target.closest(".tooltip")){
-document.querySelectorAll(".tooltip").forEach(t=>t.classList.remove("show"));
-}
 });
 
 </script>
