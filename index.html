@@ -18,7 +18,8 @@ href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
 <style>
 
-/* ===== 背景 ===== */
+
+/* 背景 */
 
 #mapBackground{
 position:fixed;
@@ -34,7 +35,8 @@ width:100%;
 height:100%;
 }
 
-/* ===== 全体 ===== */
+
+/* 全体 */
 
 body{
 margin:0;
@@ -45,7 +47,8 @@ background:#f4fbfb;
 color:#333;
 }
 
-/* ===== ヘッダー ===== */
+
+/* ヘッダー */
 
 header{
 background:rgba(0,139,139,0.7);
@@ -90,7 +93,8 @@ color:#008b8b;
 transform:scale(1.05);
 }
 
-/* ===== メイン ===== */
+
+/* メイン */
 
 main{
 max-width:900px;
@@ -98,7 +102,6 @@ margin:auto;
 padding:50px 20px;
 }
 
-/* ===== セクション ===== */
 
 section{
 background:white;
@@ -116,7 +119,6 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* ===== セクションタイトル ===== */
 
 h2{
 font-size:26px;
@@ -125,14 +127,16 @@ padding-bottom:5px;
 margin-bottom:15px;
 }
 
-/* ===== リスト ===== */
+
+/* リスト */
 
 ul{
 padding-left:20px;
 font-size:19px;
 }
 
-/* ===== ツールチップ ===== */
+
+/* ツール */
 
 .tooltip{
 position:relative;
@@ -274,7 +278,8 @@ transition:0.25s;
 transform:scale(1.3);
 }
 
-/* ===== フッター ===== */
+
+/* フッター */
 
 footer{
 text-align:center;
@@ -287,7 +292,7 @@ line-height:1.6;
 
 /* ===== スマホ ===== */
 
-@media (max-width:768px){
+/* スマホ用 */
 
 header h1{
 font-size:28px;
@@ -617,6 +622,7 @@ const shelf=document.getElementById("bookshelf");
 document.querySelector(".book-btn.left")
 .addEventListener("click",()=>{
 shelf.scrollBy({left:-300,behavior:"smooth"});
+});
 });
 
 document.querySelector(".book-btn.right")
